@@ -1,4 +1,4 @@
-package exercicios.algoritimos;
+package exercicios.algoritmos;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
