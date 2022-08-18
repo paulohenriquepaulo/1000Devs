@@ -10,25 +10,22 @@ public class Exercicio04 {
         DecimalFormat format = new DecimalFormat("##,##0.00");
 
         System.out.print("Informe o número para o cálculo da tabuada: ");
-        double numero = entrada.nextInt();
+        Double numero = entrada.nextDouble();
+        Integer numeroInteiro = numero.intValue();
 
-        System.out.println("\nTabuada do + e - para o número " + numero + ": ");
+        System.out.println("\nTabuada do + e - para o número " + numeroInteiro + ": ");
         for (int i = 0; i < 10; i++) {
-            System.out.print(numero + " + " + i + " = " + (numero + i));
-            if (numero - i >= 0) {
-            System.out.println("\t\t\t" + numero + " - " + i + " = " + (numero - i));
-            } else {
-            System.out.println("\t\t\t" + numero + " - " + i + " = " + ((numero - i) * -1));
-            }
+            System.out.print(numeroInteiro + " + " + i + " = " + (numeroInteiro + i));
+            System.out.println("\t\t\t" + numeroInteiro + " - " + i + " = " + Math.abs(numeroInteiro - i));
         }
 
-        System.out.println("\nTabuada do * e / para o número " + numero + ": ");
+        System.out.println("\nTabuada da * e / para o número " + numeroInteiro + ": ");
         for (int i = 0; i < 10; i++) {
-            System.out.print(numero + " * " + i + " = " + (numero * i));
-            if (i != 0) {
-                System.out.println("\t\t\t" + numero + " / " + i + " = " + format.format(numero / i));
+            System.out.print(numeroInteiro + " * " + i + " = " + (numeroInteiro * i));
+            if (i == 0) {
+                System.out.println("\t\t\t" + numeroInteiro + " / " + i + " = " + "não existe divisão por zero");
             } else {
-                System.out.println("\t\t\t" + numero + " - " + i + " = " + "não existe divisão por zero");
+                System.out.println("\t\t\t" + numeroInteiro + " / " + i + " = " + format.format(numero / i));
             }
         }
     }
