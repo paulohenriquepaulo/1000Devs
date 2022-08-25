@@ -1,4 +1,4 @@
-# :bulb: Alguns exercicios da lista de algoritmos com implentaçoes do Tray Catch
+# :bulb: Alguns exercícios da lista de algoritmos com implentações do Tray Catch
 
 :pushpin: 1. Uma imobiliária vende apenas terrenos retangulares. Faça um algoritmo para imprimir a
 área do terreno e o valor de venda do mesmo. Para isto será necessário o usuário
