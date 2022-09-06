@@ -9,7 +9,7 @@ public class Exercicio20 {
 
         System.out.print("Digite um numero de 4 digitos: ");
         Integer numero = entrada.nextInt();
-
+        String valorString = String.valueOf(numero.toString().charAt(3));
         String number = String.valueOf(numero);
         char[] digitos = number.toCharArray();
 
