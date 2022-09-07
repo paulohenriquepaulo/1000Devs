@@ -1,6 +1,8 @@
 package exercicios.atividadesAvaliativas;
 
+import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Atividade02 {
@@ -8,7 +10,11 @@ public class Atividade02 {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
-        int[] count = {0, 0, 0, 0,};
+        int[] count = {0, 0, 0};
+        HashMap<String, Integer> candidatos = new HashMap<>();
+        candidatos.put("Candidato A", 0);
+        candidatos.put("Candidato B", 0);
+        candidatos.put("Candidato C", 0);
         int quantidadeVotos = 0;
         int opcao = 0;
 
@@ -31,8 +37,6 @@ public class Atividade02 {
             }
 
             switch (opcao) {
-                case 0:
-                    break;
                 case 1:
                     System.out.println("Você votou no candidato A");
                     count[0]++;
@@ -50,7 +54,6 @@ public class Atividade02 {
                     break;
                 case 4:
                     System.out.println("Seu voto foi nulo");
-                    count[3]++;
                     quantidadeVotos++;
                     break;
                 default:
@@ -64,6 +67,7 @@ public class Atividade02 {
     static void resultadoElicao(int[] count) {
         double pesoVoto = 100 / 5;
         int votosValidos = count[0] + count[1] + count[2];
+        int votosNulos = 5 - votosValidos;
         System.out.println("===================================================");
         System.out.println("=============== Resultado da Eleição ==============");
         System.out.println("===================================================");
@@ -71,7 +75,7 @@ public class Atividade02 {
                 "\nPercentual de Votos Candidato A: \t\t" + (count[0] * pesoVoto) + " %" +
                 "\nPercentual de Votos Candidato B: \t\t" + (count[1] * pesoVoto) + " %" +
                 "\nPercentual de Votos Candidato C: \t\t" + (count[2] * pesoVoto) + " %" +
-                "\nPercentual de Votos Nulos:       \t\t" + (count[3] * pesoVoto) + " %");
+                "\nPercentual de Votos Nulos:       \t\t" + (votosNulos * pesoVoto) + " %");
         System.out.println("---------------------------------------------------");
         System.out.println(contadorDeVotos(count));
     }
@@ -100,9 +104,6 @@ public class Atividade02 {
                 vencedor = "Candidato B";
             } else if (count[2] == maisVotado) {
                 vencedor = "Candidato C";
-            } else if (count[3] == maisVotado) {
-                count[3] = 0;
-                return contadorDeVotos(count);
             }
             frase = "O vencendor foi o " + vencedor;
         }

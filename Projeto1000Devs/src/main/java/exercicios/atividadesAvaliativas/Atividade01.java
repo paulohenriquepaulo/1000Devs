@@ -14,7 +14,7 @@ public class Atividade01 {
         System.out.println("========================== CAIXA ELETRÔNICO ============================");
         System.out.println("========================================================================");
         while (true) {
-            if (apresentarNotas == true) {
+            if (apresentarNotas) {
                 System.out.println("Notas de: \nR$ 100,00 \nR$ 50,00 \nR$ 20,00 \nR$ 10,00 \nR$ 5,00");
             }
             System.out.print("------------------------------------------------------------------------" +
@@ -58,7 +58,7 @@ public class Atividade01 {
         int tamanho = valor.toString().length();
 
         //Transformando o valor de saque em String e pegando seu ultimo caracter
-        // para validar se é possivel efetuar o saque
+        // para validar se é possivel efetuar o saque.
         String valorString = String.valueOf(valor.toString().charAt(tamanho - 1));
 
         //Transformando o valor do ultimo caracter em inteiro
